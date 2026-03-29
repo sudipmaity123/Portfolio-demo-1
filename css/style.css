@@ -1,0 +1,706 @@
+/* Import multiple fonts from Google Fonts so they can be used in the website */
+@import url("https://fonts.googleapis.com/css2?family=Alyamama:wght@300..900&family=Architects+Daughter&family=Faustina:ital,wght@0,300..800;1,300..800&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Selects ALL elements in the page */
+* {
+  margin: 0px; /* Removes default margin browsers add to elements */
+  padding: 0px; /* Removes default padding from elements */
+  box-sizing: border-box; /* Makes width & height include padding and border */
+  font-family:
+    "Poppins", sans-serif; /* Sets default font for the entire website */
+}
+
+/* Main body container for the portfolio section */
+.portfolio-body {
+  /* Sets background image for the entire section */
+  background-image: url("/Images/dark-gradient-background-with-copy-space_53876-99548.jpg");
+
+  background-size: cover; /* Makes the image cover the entire container */
+
+  background-position: center; /* Keeps the important part of image centered */
+
+  height: 100vh; /* Makes section height equal to full screen height */
+
+  padding: 50px 5%; /* Adds space inside the section (top/bottom 50px, left/right 5%) */
+}
+
+/* Main content box inside portfolio-body */
+.container {
+  position: relative; /* Allows absolute positioned elements inside this container */
+
+  height: 100%; /* Makes container take full height of its parent */
+
+  border-radius: 30px; /* Rounds the corners of the container */
+
+  /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.1);
+
+  /* Very light border around container */
+  border: 2px solid rgba(255, 255, 255, 0.1);
+
+  /* Safari browser support for blur */
+  -webkit-backdrop-filter: blur(20px);
+
+  /* Blurs the background behind this container (glass effect) */
+  backdrop-filter: blur(20px);
+
+  overflow: hidden; /* Hides anything that goes outside the container */
+
+  /* Adds soft glow shadow around container */
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+
+  transform: scale(0); /* Initially shrink container to invisible */
+
+  animation: zoom-in 1s ease forwards;
+  /* Plays zoom-in animation when page loads */
+}
+
+/* Animation definition */
+@keyframes zoom-in {
+  100% {
+    transform: scale(1); /* Expands container to normal size */
+  }
+}
+
+/* HEADER SECTION */
+header {
+  display: flex;
+  /* Makes header children align horizontally */
+
+  justify-content: space-between;
+  /* Pushes logo left and navbar right */
+
+  align-items: center;
+  /* Vertically centers items */
+
+  padding: 20px 5%;
+  /* Adds internal spacing */
+
+  z-index: 100;
+  /* Ensures header stays above other elements */
+}
+
+/* Class used for animated elements */
+.animated {
+  transform: translateY(30px);
+  /* Initially move element 30px downward */
+
+  opacity: 0;
+  /* Makes element invisible initially */
+
+  animation: slide-in 1s ease forwards;
+  /* Plays slide-in animation */
+
+  animation-delay: 1.5s;
+  /* Animation starts after 1.5 seconds */
+}
+
+/* Slide animation */
+@keyframes slide-in {
+  100% {
+    transform: translateY(0);
+    /* Moves element back to original position */
+
+    opacity: 1;
+    /* Makes element visible */
+  }
+}
+
+/* Logo styling */
+.logo {
+  color: white; /* Text color */
+
+  font-size: 24px; /* Text size */
+
+  font-weight: bold; /* Makes logo bold */
+}
+
+/* Color for span inside logo */
+.logo span {
+  color: #ff4d4d; /* Makes part of logo red */
+}
+
+/* Navbar container */
+.navbar {
+  display: flex; /* Places links horizontally */
+
+  align-items: center; /* Vertically aligns links */
+
+  gap: 20px; /* Creates space between navbar items */
+}
+
+/* Navbar links */
+.navbar a {
+  color: white; /* Link text color */
+
+  text-decoration: none; /* Removes underline */
+
+  font-size: 16px; /* Link text size */
+
+  margin-left: 20px; /* Adds spacing between links */
+
+  transition: 0.3s ease; /* Smooth hover animation */
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
+  border-bottom: 2px solid white; /* Adds underline effect */
+
+  font-size: 19px; /* Slightly increases size when hovered */
+}
+/* Intro section layout */
+.intro {
+  display: flex;
+  /* Makes child elements (text + image) appear side-by-side horizontally */
+
+  align-items: center;
+  /* Vertically centers the intro text and image */
+
+  height: 100%;
+  /* Makes intro section take full height of its parent container */
+
+  gap: 50px;
+  /* Creates 50px space between text and image */
+
+  padding: 50px 5% 0;
+  /* Adds space: top=50px, left/right=5%, bottom=0 */
+
+  color: #fff;
+  /* Sets default text color inside intro to white */
+}
+
+/* Main heading inside intro */
+.intro-details h1 {
+  font-size: 55px;
+  /* Large font size to make main heading prominent */
+
+  line-height: 1;
+  /* Controls vertical spacing between lines of text */
+}
+
+/* Subheading text */
+.intro-details h2 {
+  font-size: 30px;
+  /* Medium font size for subtitle */
+
+  margin: 20px 0 40px 0;
+  /* Adds spacing: top=20px bottom=40px */
+}
+
+/* Paragraph text */
+.intro-details p {
+  font-size: 18px;
+  /* Comfortable reading size */
+
+  margin-bottom: 10px 0px 20px;
+  /* Adds spacing around paragraph */
+}
+
+/* Container holding button and social icons */
+.intro-details .download-resume {
+  display: flex;
+  /* Aligns button and social icons in one horizontal line */
+
+  align-items: center;
+  /* Vertically aligns them in center */
+
+  margin-top: 30px;
+  /* Adds space above the button section */
+}
+
+/* Button styling */
+.button {
+  display: inline-block;
+  /* Allows width, padding and margin to work properly */
+
+  padding: 10px 20px;
+  /* Adds space inside button (top/bottom 10px, left/right 20px) */
+
+  background-color: #fff;
+  /* Button background color */
+
+  color: #000;
+  /* Button text color */
+
+  text-decoration: none;
+  /* Removes underline from link */
+
+  border: 2px solid #fff;
+  /* Creates white border around button */
+
+  border-radius: 40px;
+  /* Makes button rounded (pill shape) */
+
+  box-shadow: 0px 0px 10px #fff;
+  /* Adds glowing effect around button */
+
+  font-weight: 500;
+  /* Medium bold text */
+}
+
+/* Hover effect for button */
+.button:hover {
+  background-color: transparent;
+  /* Removes background when hovering */
+
+  color: #fff;
+  /* Changes text color to white */
+
+  box-shadow: none;
+  /* Removes glow shadow */
+
+  transition: 0.5s ease;
+  /* Smooth animation for hover changes */
+}
+
+/* Social links container */
+.intro-details .social-links {
+  margin-left: 10px;
+  /* Adds space between button and social icons */
+}
+
+/* Social icon buttons */
+.intro-details .social-links a {
+  display: inline-flex;
+  /* Makes icon behave like flex container */
+
+  align-items: center;
+  /* Centers icon vertically */
+
+  justify-content: center;
+  /* Centers icon horizontally */
+
+  padding: 8px;
+  /* Adds space around icon */
+
+  border: 2px solid #fff;
+  /* White border around icons */
+
+  border-radius: 50%;
+  /* Makes icon circular */
+
+  font-size: 20px;
+  /* Size of icon */
+
+  color: #fff;
+  /* Icon color */
+
+  text-decoration: none;
+  /* Removes underline */
+
+  margin: 0 8px;
+  /* Adds spacing between icons */
+}
+
+/* Hover effect for social icons */
+.intro-details .social-links a:hover {
+  background-color: #fff;
+  /* Changes background to white */
+
+  color: #333;
+  /* Changes icon color */
+
+  box-shadow: none;
+  /* Removes any shadow */
+}
+
+/* Container holding profile image */
+.intro-image .image-box {
+  position: relative;
+  /* Allows positioning adjustments */
+
+  bottom: 100px;
+  /* Moves image upward by 100px */
+
+  width: 20vw;
+  /* Width = 20% of viewport width */
+
+  height: 20vw;
+  /* Height also 20% of viewport width */
+
+  border: 2px solid #fff;
+  /* White border around image */
+
+  border-radius: 50%;
+  /* Makes image container circular */
+
+  box-shadow: 0px 0px 20px #fff;
+  /* Adds glow effect around image */
+
+  overflow: hidden;
+  /* Hides any image parts outside circle */
+}
+
+/* Actual profile image */
+.intro-image .image-box img {
+  width: 100%;
+  /* Makes image fill container width */
+
+  height: 100%;
+  /* Makes image fill container height */
+
+  object-fit: cover;
+  /* Crops image to fit container without distortion */
+
+  border-radius: 50%;
+  /* Ensures image stays circular */
+}
+/* ABOUT SECTION MAIN CONTAINER */
+.about {
+  display: flex;
+  /* Places about text and image side-by-side horizontally */
+
+  justify-content: center;
+  /* Horizontally centers the content inside the about section */
+
+  align-items: center;
+  /* Vertically centers the image and text */
+
+  padding: 50px 5%;
+  /* Adds spacing inside the section (top/bottom 50px, left/right 5%) */
+
+  background-color: #000;
+  /* Sets background color of about section to black */
+
+  color: #fff;
+  /* Sets text color inside this section to white */
+
+  gap: 50px;
+  /* Creates space between the text block and image */
+}
+
+/* ABOUT SECTION HEADING */
+.about-content h2 {
+  font-size: 40px;
+  /* Large heading size to make section title visible */
+
+  margin-bottom: 20px;
+  /* Adds space below the heading */
+}
+
+/* HIGHLIGHTED TEXT COLOR */
+.about span {
+  color: #ff944d;
+  /* Changes color of span text to orange (used for highlighting words) */
+}
+
+/* ABOUT PARAGRAPH TEXT */
+.about-content p {
+  font-size: 18px;
+  /* Comfortable reading font size */
+
+  text-align: left;
+  /* Aligns paragraph text to the left */
+
+  margin-bottom: 20px;
+  /* Adds space under paragraph */
+}
+
+/* ABOUT PROFILE IMAGE */
+.about-image img {
+  position: relative;
+  /* Allows moving the image relative to its normal position */
+
+  width: 12vw;
+  /* Image width equals 12% of the viewport width */
+
+  height: 12vw;
+  /* Image height also 12% of viewport width (keeps it square) */
+
+  border: 2px solid #fff;
+  /* White border around the image */
+
+  border-radius: 50%;
+  /* Makes the image circular */
+
+  box-shadow: 0px 0px 20px #fff;
+  /* Adds glowing effect around the image */
+
+  overflow: hidden;
+  /* Hides any part of image that goes outside the circle */
+}
+
+/* IMAGE HOVER EFFECT */
+.about-image img:hover {
+  transform: scale(1.1);
+  /* Enlarges image by 10% when hovering */
+
+  transition: 0.5s ease;
+  /* Makes the zoom animation smooth */
+
+  box-shadow: none;
+  /* Removes glow effect when hovering */
+}
+
+/* GENERAL HEADING STYLE USED IN MULTIPLE SECTIONS */
+.heading {
+  text-align: center;
+  /* Centers heading text */
+
+  font-size: 40px;
+  /* Large heading size */
+
+  margin-bottom: 20px;
+  /* Adds spacing below heading */
+}
+
+/* SERVICES SECTION */
+.services {
+  padding: 50px 5%;
+  /* Adds space inside the services section */
+
+  background-color: #000000;
+  /* Black background color */
+
+  color: #000000;
+  /* Default text color (later overridden for headings) */
+}
+
+/* SERVICES SECTION TITLE */
+.services h2 {
+  text-align: center;
+  /* Centers the title */
+
+  font-size: 40px;
+  /* Large heading size */
+
+  margin-bottom: 20px;
+  /* Space below heading */
+
+  color: #fff;
+  /* Makes heading text white */
+}
+
+/* SERVICES GRID CONTAINER */
+.services-container {
+  display: grid;
+  /* Uses CSS Grid to arrange service cards */
+
+  grid-template-columns: repeat(3, 1fr);
+  /* Creates 3 equal columns */
+
+  align-items: center;
+  /* Vertically aligns items in grid */
+
+  gap: 40px;
+  /* Adds space between grid items */
+
+  padding: 50px 5%;
+  /* Adds spacing inside container */
+}
+
+/* SERVICE CARD BOX */
+.service-box {
+  display: flex;
+  /* Uses flexbox for card content */
+
+  justify-content: center;
+  /* Horizontally centers content */
+
+  align-items: center;
+  /* Vertically centers content */
+
+  flex-direction: column;
+  /* Stacks elements vertically */
+
+  padding: 20px;
+  /* Adds internal space inside card */
+
+  background-color: rgba(255, 60, 0, 0.89);
+  /* Sets orange background for cards */
+
+  height: 200px;
+  /* Fixed height for each service card */
+
+  border-radius: 10px;
+  /* Slightly rounds card corners */
+
+  transition: 0.5s ease;
+  /* Smooth hover animation */
+}
+
+/* SERVICE CARD HOVER EFFECT */
+.service-box:hover {
+  transform: scale(1.1);
+  /* Enlarges card slightly when hovering */
+
+  border: 2px solid #fff;
+  /* Adds white border */
+
+  background-color: #000000;
+  /* Changes background to black */
+
+  color: #ffffff;
+  /* Changes text color to white */
+}
+
+/* SERVICE CARD CONTENT CONTAINER */
+.service-info {
+  display: flex;
+  /* Uses flexbox */
+
+  justify-content: center;
+  /* Centers horizontally */
+
+  align-items: center;
+  /* Centers vertically */
+
+  flex-direction: column;
+  /* Stacks icon, title, and text vertically */
+
+  text-align: center;
+  /* Centers the text */
+}
+
+/* SERVICE TITLE */
+.service-info h4 {
+  font-size: 30px;
+  /* Large font for service title */
+
+  margin-bottom: 10px;
+  /* Space below title */
+}
+
+/* SERVICE DESCRIPTION */
+.service-info p {
+  font-size: 18px;
+  /* Readable text size */
+}
+
+/* SERVICE ICON */
+.service-info i {
+  font-size: 40px;
+  /* Makes icon large */
+
+  margin-bottom: 10px;
+  /* Adds space below icon */
+}
+
+/* FOOTER MAIN CONTAINER */
+.footer-contain {
+  padding: 50px 0;
+  /* Adds space inside footer (top and bottom 50px, left/right 0) */
+
+  background-color: #1f1d1d;
+  /* Dark gray background color for footer */
+
+  color: #fff;
+  /* Sets default text color to white */
+}
+
+/* FOOTER SOCIAL ICON CONTAINER */
+.footer-contain .social-links {
+  display: flex;
+  /* Places social icons in a horizontal row */
+
+  justify-content: center;
+  /* Horizontally centers the icons */
+
+  align-items: center;
+  /* Vertically aligns icons */
+
+  margin-bottom: 20px;
+  /* Adds space below the icons */
+}
+
+/* FOOTER SOCIAL ICON LINKS */
+.footer-contain .social-links a {
+  display: inline-flex;
+  /* Allows flex alignment inside the link */
+
+  align-items: center;
+  /* Centers icon vertically */
+
+  justify-content: center;
+  /* Centers icon horizontally */
+
+  padding: 8px;
+  /* Adds space inside the icon circle */
+
+  border: 2px solid #fff;
+  /* White circular border */
+
+  border-radius: 50%;
+  /* Makes the icon container circular */
+
+  font-size: 20px;
+  /* Controls icon size */
+
+  color: #fff;
+  /* Icon color */
+
+  text-decoration: none;
+  /* Removes underline from link */
+
+  margin: 0 8px;
+  /* Adds horizontal spacing between icons */
+}
+
+/* HOVER EFFECT FOR SOCIAL ICONS */
+.footer-contain .social-links a:hover {
+  background-color: #fff;
+  /* Changes icon background to white */
+
+  color: #333;
+  /* Changes icon color to dark gray */
+
+  box-shadow: none;
+  /* Removes any shadow effect */
+}
+
+/* FOOTER NAVIGATION LIST */
+.footer-contain ul {
+  display: flex;
+  /* Places list items horizontally */
+
+  justify-content: center;
+  /* Centers the navigation links */
+
+  align-items: center;
+  /* Aligns them vertically */
+
+  flex-wrap: wrap;
+  /* Allows links to move to next line if screen is small */
+
+  margin-bottom: 20px;
+  /* Adds space below navigation links */
+}
+
+/* FOOTER LIST ITEMS */
+.footer-contain ul li {
+  list-style: none;
+  /* Removes default bullet points */
+
+  margin: 0 15px;
+  /* Adds spacing between list items */
+}
+
+/* FOOTER LINKS */
+.footer-contain ul li a {
+  color: #fff;
+  /* Link text color */
+
+  text-decoration: none;
+  /* Removes underline */
+
+  font-size: 16px;
+  /* Normal readable size */
+
+  transition: 0.3s ease;
+  /* Smooth hover animation */
+}
+
+/* HOVER EFFECT FOR FOOTER LINKS */
+.footer-contain ul li a:hover {
+  border-bottom: 2px solid #fff;
+  /* Adds underline effect */
+
+  font-size: 19px;
+  /* Slightly increases text size on hover */
+}
+
+/* FOOTER COPYRIGHT TEXT */
+.footer-contain p {
+  text-align: center;
+  /* Centers the copyright text */
+}
